@@ -1,10 +1,10 @@
 # Visual Hull Reconstruction via Space Carving
 
-##Objective
+#Objective
 
 The goal of this assignment was to reconstruct a 3D shape using multiple 2D views. This was done by generating silhouettes from different camera angles, projecting 3D points into image space using the pinhole camera model, and applying space carving to obtain the visual hull of the object.
 
-##Method
+#Method
 
 ### Multi-View Silhouettes
 
@@ -39,13 +39,13 @@ If a voxel failed any of these conditions, it was removed. This process was repe
 
 The remaining voxels after carving were reshaped into a 3D occupancy grid. These voxels were visualized as a point cloud using a 3D scatter plot.
 
-##Results
+#Results
 
 The number of voxels decreased as more views were processed, showing that inconsistent voxels were successfully removed. The process eventually stabilized, indicating convergence to a consistent visual hull.
 
 The final reconstruction appears as a solid, rounded shape approximating the original object. The result is slightly blocky due to the discrete voxel grid but still captures the overall structure.
 
-## Experiments
+# Experiments
 
 ### Effect of Number of Views
 
@@ -55,18 +55,18 @@ Increasing the number of camera views improved the reconstruction quality. With 
 
 Higher voxel resolution resulted in a more detailed reconstruction but increased computation time. Lower resolution grids were faster but produced coarser results.
 
-##Limitations
+#Limitations
 
 The visual hull method cannot reconstruct concave regions that are not visible in silhouettes. It produces the largest volume consistent with all views, which can lead to overestimation of the true shape.
 
 Additionally, the reconstruction depends heavily on silhouette quality. Any inaccuracies in the silhouettes can affect the final result.
 
-## Implementation Notes
+# Implementation Notes
 
 PyTorch3D and Open3D were not used due to compatibility issues with on Windows. Several updates were made but none worked. Instead, silhouettes were generated using synthetic data, and visualization was performed using matplotlib.
 
 Despite this adjustment, all core components of the assignment were implemented, including projection, silhouette consistency, and space carving.
 
-## Conclusion
+# Conclusion
 
 The assignment successfully demonstrated how multiple 2D views can be used to reconstruct a 3D shape. The space carving algorithm effectively removed inconsistent voxels, resulting in a visual hull that approximates the object. The experiment highlights both the strengths and limitations of silhouette-based reconstruction methods.
