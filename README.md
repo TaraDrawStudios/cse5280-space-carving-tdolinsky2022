@@ -1,10 +1,10 @@
 # Visual Hull Reconstruction via Space Carving
 
-#Objective
+# Objective
 
 The goal of this assignment was to reconstruct a 3D shape using multiple 2D views. This was done by generating silhouettes from different camera angles, projecting 3D points into image space using the pinhole camera model, and applying space carving to obtain the visual hull of the object.
 
-#Method
+# Method
 
 ### Multi-View Silhouettes
 
@@ -39,7 +39,7 @@ If a voxel failed any of these conditions, it was removed. This process was repe
 
 The remaining voxels after carving were reshaped into a 3D occupancy grid. These voxels were visualized as a point cloud using a 3D scatter plot.
 
-#Results
+# Results
 
 The number of voxels decreased as more views were processed, showing that inconsistent voxels were successfully removed. The process eventually stabilized, indicating convergence to a consistent visual hull.
 
